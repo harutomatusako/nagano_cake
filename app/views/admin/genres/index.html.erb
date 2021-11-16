@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="mx-auto col-11 col-lg-8 col-xl-6">
+      <nav class="navbar nabvar-light bg-light m-auto"> 
+      
+       <div class="container-fluid">ジャンル一覧.追加</div>
+     
+      <%= form_for @genre,url: admin_genres_path do |f| %>
+      <div class="form-group">
+      <label for="genre_title">ジャンル名</label>
+      <h4><%= f.text_field :name %></h4>
+      </div>
+      <% end %>
+      
+      
+     <tbody>
+     <% @genres.each do |genre| %>
+     
+     <td><%= genre.name %></td>
+     
+     <% end %>
+     </tbody>
+      
+      </nav>
+    </div>
+  </div>
+
+  
+</div>
