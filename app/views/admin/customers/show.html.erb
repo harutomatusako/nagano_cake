@@ -1,0 +1,63 @@
+<h2><%= @customer.last_name + @customer.first_name %>さんの会員詳細</h2>
+<table>
+  <th>
+    <td>会員ID</td>
+    <td><%= @customer.id %></td>
+  </th>
+</table>
+
+<table>
+  <th>
+    <td>氏名</td>
+    <td><%= @customer.last_name + @customer.first_name %></td>
+  </th>
+</table>
+
+<table>
+  <th>
+    <td>フリガナ</td>
+    <td><%= @customer.last_name_kana + @customer.first_name_kana %></td>
+  </th>
+</table>
+
+<table>
+  <th>
+    <td>郵便番号</td>
+    <td><%= @customer.postal_code %></td>
+  </th>
+</table>
+
+<table>
+  <th>
+    <td>住所</td>
+    <td><%= @customer.address %></td>
+  </th>
+</table>
+
+<table>
+  <th>
+    <td>電話番号</td>
+    <td><%= @customer.telephone_number %></td>
+  </th>
+</table>
+
+<table>
+  <th>
+    <td>メールアドレス</td>
+    <td><%= @customer.email %></td>
+  </th>
+</table>
+
+<table>
+  <th>
+    <td>会員ステータス</td>
+    <td><% if @customer.is_active == true %>
+           <p>有効</p>
+           <% else %>
+           <p>退会</p>
+           <% end %>
+       </td>
+  </th>
+</table>
+
+<td><%= link_to "編集する",edit_admin_customer_path(@customer.id) %></td>
